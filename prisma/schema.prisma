@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Anime {
+  id           Int        @id @default(autoincrement())
+  name         String     @unique
+  author       String
+  tags         String[]
+  // 发布时间
+  release      String
+  score        Float
+  introduction String
+  // 封面图
+  cover        String
+  // 海报图
+  poster       String[]
+  // 集数
+  episodes     Episodes[]
+}
+
+model Episodes {
+  id      Int    @id @default(autoincrement())
+  animeId Int
+  anime   Anime  @relation(fields: [animeId], references: [id])
+  // 顺序
+  index   Int
+  // 视频封面图
+  cover   String
+}

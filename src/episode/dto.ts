@@ -12,6 +12,9 @@ export class Episode {
 
   @ApiProperty({ type: 'string' })
   cover: string;
+
+  @ApiProperty({ type: 'string' })
+  videoUrl: string;
 }
 
 export class CreateEpisodeInput {
@@ -23,6 +26,9 @@ export class CreateEpisodeInput {
 
   @ApiProperty({ type: 'string' })
   cover: string;
+
+  @ApiProperty({ type: 'string' })
+  videoUrl: string;
 }
 
 export class UpdateEpisodeInput {
@@ -34,4 +40,7 @@ export class UpdateEpisodeInput {
 
   @ApiProperty({ type: 'string' })
   cover: string;
+
+  @ApiProperty({ type: 'string' })
+  videoUrl: string;
 }

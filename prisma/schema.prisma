@@ -28,11 +28,13 @@ model Anime {
 }
 
 model Episodes {
-  id      Int    @id @default(autoincrement())
-  animeId Int
-  anime   Anime  @relation(fields: [animeId], references: [id])
+  id       Int    @id @default(autoincrement())
+  animeId  Int
+  anime    Anime  @relation(fields: [animeId], references: [id])
   // 顺序
-  index   Int
+  index    Int
   // 视频封面图
-  cover   String
+  cover    String
+  // 视频链接
+  videoUrl String
 }

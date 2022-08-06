@@ -32,6 +32,7 @@ export class EpisodeController {
       data: {
         index: createEpisodeInput.index,
         cover: createEpisodeInput.cover,
+        videoUrl: createEpisodeInput.videoUrl,
         anime: {
           connect: {
             id: createEpisodeInput.animeId,
@@ -50,6 +51,7 @@ export class EpisodeController {
       data: {
         index: updateEpisodeInput.index,
         cover: updateEpisodeInput.cover,
+        videoUrl: updateEpisodeInput.videoUrl,
       },
     });
   }

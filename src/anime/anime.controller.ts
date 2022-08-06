@@ -87,6 +87,11 @@ export class AnimeController {
   @Delete('/delete/:id')
   async deleteById(@Param('id') id: string) {
     const idInt = parseInt(id, 10);
+    await this.prisma.episodes.deleteMany({
+      where: {
+        animeId: idInt,
+      },
+    });
     await this.prisma.anime.delete({
       where: { id: idInt },
     });

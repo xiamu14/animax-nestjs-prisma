@@ -59,6 +59,7 @@ export class AnimeController {
 
   @Post('create')
   async create(@Body() createAnimeInput: CreateAnimeInput) {
+    console.log('---', createAnimeInput);
     return await this.prisma.anime.create({
       data: createAnimeInput,
     });

@@ -16,6 +16,7 @@ export class AnimeDto {
 
   @ApiProperty({ type: 'string' })
   release: string;
+
   @ApiProperty({ type: 'number' })
   score: number;
 

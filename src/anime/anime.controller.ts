@@ -45,7 +45,11 @@ export class AnimeController {
         },
       });
     }
-    return await this.prisma.anime.findMany();
+    return await this.prisma.anime.findMany({
+      include: {
+        episodes: true,
+      },
+    });
   }
 
   @Get('/:id')

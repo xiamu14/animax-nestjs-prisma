@@ -40,6 +40,9 @@ export class AnimeController {
       return await this.prisma.anime.findMany({
         skip: Number(skip),
         take: Number(take),
+        include: {
+          episodes: true,
+        },
       });
     }
     return await this.prisma.anime.findMany();

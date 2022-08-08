@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:13
-    container_name: learn-nestjs-prisma
+    container_name: postgres
     ports:
       - 5462:5432
     env_file:
